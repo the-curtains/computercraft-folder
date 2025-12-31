@@ -1,14 +1,17 @@
-local file = io.open("passwd.dat", "w")
+local functions = {}
+math.randomseed(os.epoch("utc"))
+functions.keygen = function()
+
 local lettersTable = {}
-local finalText = ""
+local finalTable = {}
 
 for i = 1, 76 do
     lettersTable[i] = ("1234567890!@#$%^&*()_+-=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"):sub(i, i)
 end
-
+ 
 for i = 1, 500 do
-    finalText = finalText .. lettersTable[math.random(76)]
+    finalTable[i] = lettersTable[math.random(76)]
 end
-
-file:write(finalText)
-file:close()
+return table.concat(finalTable)
+end
+return functions
