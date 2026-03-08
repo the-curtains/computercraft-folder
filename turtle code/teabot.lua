@@ -1,4 +1,6 @@
-local turtleFuncs = require("turtleFuncs.lua")
+local turtleFuncs = require("turtleFuncs")
+local inventoryFuncs = require("inventoryFuncs")
+
 
 local function mainTeaLoop()
 	turtleFuncs.upX(4)
@@ -20,3 +22,26 @@ local function mainTeaLoop()
 	turtleFuncs.turnRightX(2)
 	turtleFuncs.downX(4)
 end
+
+local function fuel()
+	if turtle.getFuelLevel() < 100 do
+		for i = 13, 16 do
+			turtle.select(i)
+			if turtle.refuel(0) then
+				turtle.refuel()
+			end
+		end
+	end
+end
+
+local function restockTea()
+	local items = inventoryFuncs.getTotalItems(turtle.list())
+	local teaCount = items[""]
+
+end
+while true do
+	os.pullEvent("redstone")
+	mainTeaLoop()
+	fuel()
+	
+	
