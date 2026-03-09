@@ -53,6 +53,7 @@ end
 
 while true do
 	os.pullEvent("redstone")
+	os.sleep(2)	
 	mainTeaLoop()
 	fuel()
 	restockTea()
