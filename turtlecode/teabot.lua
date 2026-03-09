@@ -1,5 +1,4 @@
 local turtleFuncs = require("turtleFuncs")
-local inventoryFuncs = require("inventoryFuncs")
 
 
 local function mainTeaLoop()
@@ -24,7 +23,7 @@ local function mainTeaLoop()
 end
 
 local function fuel()
-	if turtle.getFuelLevel() < 100 do
+	if turtle.getFuelLevel() < 100 then
 		for i = 13, 16 do
 			turtle.select(i)
 			if turtle.refuel(0) then
@@ -35,13 +34,22 @@ local function fuel()
 end
 
 local function restockTea()
-	local items = inventoryFuncs.getTotalItems(turtle.list())
-	local teaCount = items[""]
+	if turtle.getItemCount(1) == 0 then
+		turtle.suckDown()
+	end
+end
+
+local function restockFuel()
+	if turtle.getItemCount(13) == 0 then
+		turtle.suck()
+	end
+end
 
 end
 while true do
 	os.pullEvent("redstone")
 	mainTeaLoop()
 	fuel()
-	
-	
+	restockTea()
+	restockFuel
+end
