@@ -36,12 +36,14 @@ end
 
 local function restockTea()
 	if turtle.getItemCount(1) == 0 then
+		turtle.select(1)
 		turtle.suckDown()
 	end
 end
 
 local function restockFuel()
 	if turtle.getItemCount(13) == 0 then
+		turtle.select(13)
 		turtle.suck()
 	end
 end
