@@ -48,7 +48,9 @@ local function restockFuel()
 	end
 end
 
-end
+
+
+
 while true do
 	os.pullEvent("redstone")
 	mainTeaLoop()
