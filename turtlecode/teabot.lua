@@ -2,6 +2,7 @@ local turtleFuncs = require("turtleFuncs")
 
 
 local function mainTeaLoop()
+	turtle.select(1)
 	turtleFuncs.upX(4)
 	turtleFuncs.forwardX(3)
 	turtleFuncs.turnLeftX(1)
@@ -51,5 +52,5 @@ while true do
 	mainTeaLoop()
 	fuel()
 	restockTea()
-	restockFuel
+	restockFuel()
 end
