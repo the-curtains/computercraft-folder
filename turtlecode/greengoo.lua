@@ -7,8 +7,8 @@ local function init()
 end
 
 local function blockPlaceLoop()
-	turtle.placeDown()
 	turtle.back()
+	turtle.placeDown()	
 end
 
 local function harvest()
@@ -19,7 +19,7 @@ end
 
 local function fueling()
 	if turtle.getItemCount(1) > 1 then
-		turtle.refuel(1)
+		turtle.refuel(turtle.getItemCount(1) - 1)
 	end
 end
 
