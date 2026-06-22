@@ -31,3 +31,6 @@ local function gloop()
 end
 
 
+while true do
+	gloop()
+end
