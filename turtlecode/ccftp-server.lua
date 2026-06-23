@@ -16,7 +16,7 @@ else
 end
 
 local function awaitFile()
-    local _, msg = rednet.receive()
+    local _, msg = rednet.receive("ccftp")
     return msg
 end
 
