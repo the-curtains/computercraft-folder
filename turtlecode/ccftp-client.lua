@@ -22,7 +22,7 @@ file = table of file lines
 ]]
 local filename = ""
 while filename == "" do
-    io.write("enter your filename")
+    io.write("enter your filename: ")
     filename = io.read()
 end
 
