@@ -17,7 +17,7 @@ rednet.open("right")
 ccftp file object:
 {
 filename = "filename.ext",
-file = "serialized file"
+file = table of file lines
 }
 ]]
 local filename = ""
