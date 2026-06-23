@@ -37,6 +37,4 @@ end
 
 local msg = {["filename"] = filename, ["file"] = fileTable}
 
-msg = textutils.serialiseJSON(msg)
-
 rednet.send(id, msg)
