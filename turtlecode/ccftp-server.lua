@@ -29,6 +29,7 @@ rednet.host("ccftp", hostname)
 
 while true do
     local file = awaitFile()
+    print(file)
     local filename = file["filename"]
     local fileTable = file["file"]
     local write = ""
