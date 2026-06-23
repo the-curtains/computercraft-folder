@@ -30,9 +30,9 @@ rednet.host("ccftp", hostname)
 while true do
     local file = awaitFile()
     local filename = file["filename"]
-    local fileString = file["file"]
+    local fileTable = file["file"]
     local write = ""
-    for _, line in ipairs(fileString) do
+    for _, line in ipairs(fileTable) do
         write = write .. line .. "\n"
     end
     write = string.sub(write, 1, #write - 1)

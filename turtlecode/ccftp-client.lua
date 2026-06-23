@@ -9,6 +9,8 @@ end
 
 local id = rednet.lookup("ccftp", hostname)
 
+if not id then error("no host with name " .. hostname .. " found.") end
+
 rednet.open("right")
 
 --[[
