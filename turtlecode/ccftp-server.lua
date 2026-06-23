@@ -29,6 +29,7 @@ rednet.host("ccftp", hostname)
 
 while true do
     local file = awaitFile()
+    file = textutils.deserialiseJSON()
     local filename = file["filename"]
     file = file["file"]
     local write = ""
