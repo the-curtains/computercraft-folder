@@ -30,8 +30,10 @@ local file = io.open(filename, "r")
 local fileTable = {}
 
 if not file then error("this file doesn't actually exist.") end
+file:close()
 
-for line in file:lines() do
+
+for line in io.lines(filename) do
     table.insert(fileTable, line)
 end
 
