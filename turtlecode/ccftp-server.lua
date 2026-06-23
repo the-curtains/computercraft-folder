@@ -29,11 +29,10 @@ rednet.host("ccftp", hostname)
 
 while true do
     local file = awaitFile()
-    file = textutils.deserialiseJSON()
     local filename = file["filename"]
-    file = file["file"]
+    local fileString = file["file"]
     local write = ""
-    for _, line in ipairs(file) do
+    for _, line in ipairs(fileString) do
         write = write .. line .. "\n"
     end
     write = string.sub(write, 1, #write - 1)
