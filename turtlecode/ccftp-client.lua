@@ -39,4 +39,4 @@ end
 
 local msg = {["filename"] = filename, ["file"] = fileTable}
 
-rednet.send(id, msg)
+rednet.send(id, msg, "ccftp")
