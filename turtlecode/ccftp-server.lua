@@ -17,11 +17,11 @@ end
 
 local function awaitFile()
     local _, msg = rednet.receive()
-    return textutils.unserializeJSON(msg)
+    return msg
 end
 
 
-    
+
 rednet.open("right")
 rednet.host("ccftp", hostname)
 
